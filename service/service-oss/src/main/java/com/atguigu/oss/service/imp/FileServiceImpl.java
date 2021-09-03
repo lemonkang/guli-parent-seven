@@ -25,7 +25,7 @@ public class FileServiceImpl implements FileService {
         String bucketName = ConstantPropertiesUtil.BUCKET_NAME;
         try {
         // 创建OSSClient实例。
-        OSS ossClient = new OSSClientBuilder().build(endPoint, accessKeyId, accessKeySecret);
+            OSS ossClient = new OSSClientBuilder().build(endPoint, accessKeyId, accessKeySecret);
 
 
             //        获取上传文件的输入流

@@ -16,4 +16,12 @@ public class GlobalExceptionHandler {
         log.error(ExceptionUtil.getMessage(e));
         return R.error().message("全局异常处理");
     }
+    @ExceptionHandler(GuliException.class)
+    @ResponseBody  //把结果返回给前端
+    public R error(GuliException e){
+        e.printStackTrace();
+        log.error(ExceptionUtil.getMessage(e));
+        return R.error().code(e.getCode()).message(e.getMessage());
+    }
+
 }
